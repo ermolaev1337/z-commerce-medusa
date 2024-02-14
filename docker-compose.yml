@@ -1,0 +1,41 @@
+version: "3.9"
+services:
+
+  backend_medusa:
+    container_name: backend_medusa
+    environment:
+      - DATABASE_URL=postgresql://yourusername:yourpassword@db_postgres/medusa_db
+      - MEDUSA_ADMIN_ONBOARDING_TYPE=nextjs
+      - STORE_CORS=http://frontend_storefront:8001,http://backend_medusa:7001
+      - MEDUSA_ADMIN_ONBOARDING_NEXTJS_DIRECTORY=z-commerce-storefront
+    build: .
+    ports:
+      - 7001:7001
+      - 9000:9000
+    depends_on:
+      - db_postgres
+    networks:
+      - network_medusa
+
+  db_postgres:
+    container_name: db_postgres
+    image: postgres
+    environment:
+      - POSTGRES_DB=medusa_db
+      - POSTGRES_USER=yourusername
+      - POSTGRES_PASSWORD=yourpassword
+    ports:
+      - 5432:5432
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready", "-d", "db_prod" ]
+      interval: 30s
+      timeout: 60s
+      retries: 5
+      start_period: 80s
+    networks:
+      - network_medusa
+
+networks:
+  network_medusa:
+    name: network_medusa
+    driver: bridge

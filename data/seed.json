@@ -94,7 +94,7 @@
       "amount": 0
     },
     {
-      "name": "FakeEx Standard",
+      "name": "ZKP Standard",
       "region_id": "test-region-na",
       "provider_id": "manual",
       "data": {
@@ -104,7 +104,7 @@
       "amount": 800
     },
     {
-      "name": "FakeEx Express",
+      "name": "ZKP Express",
       "region_id": "test-region-na",
       "provider_id": "manual",
       "data": {
@@ -114,7 +114,7 @@
       "amount": 1200
     },
     {
-      "name": "FakeEx Return",
+      "name": "ZKP Return",
       "region_id": "test-region-na",
       "provider_id": "manual",
       "data": {
