@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
-trap 'medusa seed -f ./data/seed.json' EXIT
+medusa seed -f ./data/seed.json || true
 
 npm run start
