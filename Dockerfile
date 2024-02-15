@@ -4,14 +4,14 @@ WORKDIR /app
 COPY ./src ./src
 COPY ./data ./data
 COPY ./package.json ./package.json
-RUN yarn
+RUN npm i
 
 COPY ./medusa-config.js ./medusa-config.js
-RUN yarn global add @medusajs/medusa-cli@latest
+RUN npm i -g @medusajs/medusa-cli@latest
 
 COPY ./tsconfig.server.json ./tsconfig.server.json
 COPY ./tsconfig.json ./tsconfig.json
-RUN yarn build
+RUN npm run build
 
 COPY ./start.sh ./start.sh
 ENTRYPOINT ["bash", "./start.sh"]

@@ -1,5 +1,6 @@
 #!/bin/bash
 
-medusa seed -f ./data/seed.json
 
-yarn start
+trap 'medusa seed -f ./data/seed.json' EXIT
+
+npm run start
