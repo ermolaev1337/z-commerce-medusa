@@ -1,5 +1,7 @@
 #!/bin/bash
 
-medusa seed -f ./data/seed.json || true
+echo "Attempting to seed Medusa..."
+medusa seed -f ./data/seed.json
 
+echo "Starting application..."
 npm run start

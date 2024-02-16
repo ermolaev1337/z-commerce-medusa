@@ -2,7 +2,6 @@ FROM node:latest
 
 WORKDIR /app
 COPY ./src ./src
-COPY ./data ./data
 COPY ./package.json ./package.json
 RUN npm i
 
@@ -13,5 +12,6 @@ COPY ./tsconfig.server.json ./tsconfig.server.json
 COPY ./tsconfig.json ./tsconfig.json
 RUN npm run build
 
+COPY ./data ./data
 COPY ./start.sh ./start.sh
 ENTRYPOINT ["bash", "./start.sh"]
