@@ -34,6 +34,8 @@ services:
       start_period: 80s
     networks:
       - network_medusa
+    command: [ "/bin/bash", "-c", "rm -rf /var/lib/postgresql/data/* && docker-entrypoint.sh postgres" ]
+
 
 networks:
   network_medusa:
