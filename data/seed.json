@@ -76,7 +76,7 @@
     },
     {
       "name": "ZKP Return",
-      "region_id": "test-region-na",
+      "region_id": "greater-region",
       "provider_id": "manual",
       "data": {
         "id": "manual-fulfillment"
@@ -87,7 +87,7 @@
     },
     {
       "name": "I want to return it myself",
-      "region_id": "test-region-na",
+      "region_id": "greater-region",
       "provider_id": "manual",
       "data": {
         "id": "manual-fulfillment"
