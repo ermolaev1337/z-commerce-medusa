@@ -111,8 +111,8 @@
       "is_giftcard": false,
       "weight": 200,
       "images": [
-        "https://images.pexels.com/photos/3975067/pexels-photo-3975067.jpeg",
-        "https://images.pexels.com/photos/3975055/pexels-photo-3975055.jpeg"
+        "https://z-commerce.s3.eu-central-1.amazonaws.com/premium_tobacco_cigars_1.jpeg",
+        "https://z-commerce.s3.eu-central-1.amazonaws.com/premium_tobacco_cigars_2.jpeg"
       ],
       "options": [
         {
@@ -200,8 +200,8 @@
       "is_giftcard": false,
       "weight": 1000,
       "images": [
-        "https://images.pexels.com/photos/2702805/pexels-photo-2702805.jpeg",
-        "https://images.pexels.com/photos/95960/pexels-photo-95960.jpeg"
+        "https://z-commerce.s3.eu-central-1.amazonaws.com/fine_red_wine_1.jpeg",
+        "https://z-commerce.s3.eu-central-1.amazonaws.com/fine_red_wine_2.jpeg"
       ],
       "options": [
         {
@@ -268,8 +268,8 @@
       "is_giftcard": false,
       "weight": 950,
       "images": [
-        "https://images.pexels.com/photos/53351/firearm-handgun-revolver-gun-53351.jpeg",
-        "https://images.pexels.com/photos/5202382/pexels-photo-5202382.jpeg"
+        "https://z-commerce.s3.eu-central-1.amazonaws.com/compact_9mm_handgun_1.jpeg",
+        "https://z-commerce.s3.eu-central-1.amazonaws.com/compact_9mm_handgun_2.jpeg"
       ],
       "options": [
         {
@@ -336,8 +336,8 @@
       "is_giftcard": false,
       "weight": 300,
       "images": [
-        "https://images.pexels.com/photos/11587603/pexels-photo-11587603.jpeg",
-        "https://images.pexels.com/photos/11587598/pexels-photo-11587598.jpeg"
+        "https://z-commerce.s3.eu-central-1.amazonaws.com/starter_vaping_kit_1.jpeg",
+        "https://z-commerce.s3.eu-central-1.amazonaws.com/starter_vaping_kit_2.jpeg"
       ],
       "options": [
         {
@@ -366,7 +366,7 @@
             {
               "value": "Tobacco"
             }
-          ],
+      ],
           "inventory_quantity": 100,
           "manage_inventory": true
         },
@@ -425,8 +425,8 @@
       "is_giftcard": false,
       "weight": 100,
       "images": [
-        "https://images.pexels.com/photos/4047114/pexels-photo-4047114.jpeg",
-        "https://images.pexels.com/photos/4047107/pexels-photo-4047107.jpeg"
+        "https://z-commerce.s3.eu-central-1.amazonaws.com/prescription_medication_pack_1.jpeg",
+        "https://z-commerce.s3.eu-central-1.amazonaws.com/prescription_medication_pack_2.jpeg"
       ],
       "options": [],
       "variants": []
@@ -444,8 +444,8 @@
       "is_giftcard": false,
       "weight": 500,
       "images": [
-        "https://images.pexels.com/photos/4734714/pexels-photo-4734714.jpeg",
-        "https://images.pexels.com/photos/4734715/pexels-photo-4734715.jpeg"
+        "https://z-commerce.s3.eu-central-1.amazonaws.com/adult_entertainment_collection_1.jpeg",
+        "https://z-commerce.s3.eu-central-1.amazonaws.com/adult_entertainment_collection_2.jpeg"
       ],
       "options": [],
       "variants": []
@@ -463,8 +463,8 @@
       "is_giftcard": false,
       "weight": 400,
       "images": [
-        "https://images.pexels.com/photos/1405152/pexels-photo-1405152.jpeg",
-        "https://images.pexels.com/photos/1428170/pexels-photo-1428170.jpeg"
+        "https://z-commerce.s3.eu-central-1.amazonaws.com/anti_graffiti_spray_paint_1.jpeg",
+        "https://z-commerce.s3.eu-central-1.amazonaws.com/anti_graffiti_spray_paint_2.jpeg"
       ],
       "options": [
         {
@@ -493,7 +493,7 @@
             {
               "value": "Red"
             }
-          ],
+      ],
           "inventory_quantity": 100,
           "manage_inventory": true
         },
@@ -552,8 +552,8 @@
       "is_giftcard": false,
       "weight": 300,
       "images": [
-        "https://images.pexels.com/photos/14401960/pexels-photo-14401960.jpeg",
-        "https://images.pexels.com/photos/14401948/pexels-photo-14401948.jpeg"
+        "https://z-commerce.s3.eu-central-1.amazonaws.com/survival_knife_1.jpeg",
+        "https://z-commerce.s3.eu-central-1.amazonaws.com/survival_knife_2.jpeg"
       ],
       "options": [
         {
