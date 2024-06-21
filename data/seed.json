@@ -13,8 +13,8 @@
   ],
   "regions": [
     {
-      "id": "test-region-eu",
-      "name": "EU",
+      "id": "greater-region",
+      "name": "GR",
       "currency_code": "eur",
       "tax_rate": 0,
       "payment_providers": [
@@ -24,56 +24,17 @@
         "manual"
       ],
       "countries": [
-        "gb",
+        "be",
         "de",
-        "dk",
-        "se",
         "fr",
-        "es",
-        "it"
-      ]
-    },
-    {
-      "id": "test-region-na",
-      "name": "NA",
-      "currency_code": "usd",
-      "tax_rate": 0,
-      "payment_providers": [
-        "manual"
-      ],
-      "fulfillment_providers": [
-        "manual"
-      ],
-      "countries": [
-        "us",
-        "ca"
+        "lu"
       ]
     }
   ],
   "shipping_options": [
     {
-      "name": "PostFake Standard",
-      "region_id": "test-region-eu",
-      "provider_id": "manual",
-      "data": {
-        "id": "manual-fulfillment"
-      },
-      "price_type": "flat_rate",
-      "amount": 1000
-    },
-    {
-      "name": "PostFake Express",
-      "region_id": "test-region-eu",
-      "provider_id": "manual",
-      "data": {
-        "id": "manual-fulfillment"
-      },
-      "price_type": "flat_rate",
-      "amount": 1500
-    },
-    {
-      "name": "PostFake Return",
-      "region_id": "test-region-eu",
+      "name": "ZKP Return",
+      "region_id": "greater-region",
       "provider_id": "manual",
       "data": {
         "id": "manual-fulfillment"
@@ -84,7 +45,7 @@
     },
     {
       "name": "I want to return it myself",
-      "region_id": "test-region-eu",
+      "region_id": "greater-region",
       "provider_id": "manual",
       "data": {
         "id": "manual-fulfillment"
@@ -94,8 +55,8 @@
       "amount": 0
     },
     {
-      "name": "FakeEx Standard",
-      "region_id": "test-region-na",
+      "name": "ZKP Standard",
+      "region_id": "greater-region",
       "provider_id": "manual",
       "data": {
         "id": "manual-fulfillment"
@@ -104,8 +65,8 @@
       "amount": 800
     },
     {
-      "name": "FakeEx Express",
-      "region_id": "test-region-na",
+      "name": "ZKP Express",
+      "region_id": "greater-region",
       "provider_id": "manual",
       "data": {
         "id": "manual-fulfillment"
@@ -114,8 +75,8 @@
       "amount": 1200
     },
     {
-      "name": "FakeEx Return",
-      "region_id": "test-region-na",
+      "name": "ZKP Return",
+      "region_id": "greater-region",
       "provider_id": "manual",
       "data": {
         "id": "manual-fulfillment"
@@ -126,7 +87,7 @@
     },
     {
       "name": "I want to return it myself",
-      "region_id": "test-region-na",
+      "region_id": "greater-region",
       "provider_id": "manual",
       "data": {
         "id": "manual-fulfillment"
@@ -138,221 +99,312 @@
   ],
   "products": [
     {
-      "title": "Medusa T-Shirt",
+      "title": "Premium Tobacco Cigars",
       "categories": [
         {
-          "id": "pcat_shirts"
+          "id": "pcat_tobacco"
         }
       ],
-      "subtitle": null,
-      "description": "Reimagine the feeling of a classic T-shirt. With our cotton T-shirts, everyday essentials no longer have to be ordinary.",
-      "handle": "t-shirt",
+      "subtitle": "Luxury Blend",
+      "description": "Experience the rich, full-bodied flavor of our luxury blend premium tobacco cigars. Crafted for the discerning smoker.",
+      "handle": "premium-cigars",
       "is_giftcard": false,
-      "weight": 400,
+      "weight": 200,
       "images": [
-        "https://medusa-public-images.s3.eu-west-1.amazonaws.com/tee-black-front.png",
-        "https://medusa-public-images.s3.eu-west-1.amazonaws.com/tee-black-back.png",
-        "https://medusa-public-images.s3.eu-west-1.amazonaws.com/tee-white-front.png",
-        "https://medusa-public-images.s3.eu-west-1.amazonaws.com/tee-white-back.png"
+        "http://medusa:9000/uploads/premium_tobacco_cigars_1.jpeg",
+        "http://medusa:9000/uploads/premium_tobacco_cigars_2.jpeg"
       ],
       "options": [
         {
-          "title": "Size",
+          "title": "Pack Size",
           "values": [
-            "S",
-            "M",
-            "L",
-            "XL"
+            "5",
+            "10",
+            "20"
           ]
+        }
+      ],
+      "variants": [
+        {
+          "title": "5 Pack",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 50
+            },
+            {
+              "currency_code": "usd",
+              "amount": 55
+            }
+          ],
+          "options": [
+            {
+              "value": "5"
+            }
+          ],
+          "inventory_quantity": 50,
+          "manage_inventory": true
         },
+        {
+          "title": "10 Pack",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 90
+            },
+            {
+              "currency_code": "usd",
+              "amount": 100
+            }
+          ],
+          "options": [
+            {
+              "value": "10"
+            }
+          ],
+          "inventory_quantity": 30,
+          "manage_inventory": true
+        },
+        {
+          "title": "20 Pack",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 170
+            },
+            {
+              "currency_code": "usd",
+              "amount": 190
+            }
+          ],
+          "options": [
+            {
+              "value": "20"
+            }
+          ],
+          "inventory_quantity": 20,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Fine Red Wine",
+      "categories": [
+        {
+          "id": "pcat_alcohol"
+        }
+      ],
+      "subtitle": "Estate Bottled",
+      "description": "Aged to perfection, our fine red wine offers a sophisticated palette experience. Ideal for connoisseurs.",
+      "handle": "red-wine",
+      "is_giftcard": false,
+      "weight": 1000,
+      "images": [
+        "http://medusa:9000/uploads/fine_red_wine_1.jpeg",
+        "http://medusa:9000/uploads/fine_red_wine_2.jpeg"
+      ],
+      "options": [
+        {
+          "title": "Volume",
+          "values": [
+            "750ml",
+            "1.5L"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "title": "750ml Bottle",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 25
+            },
+            {
+              "currency_code": "usd",
+              "amount": 30
+            }
+          ],
+          "options": [
+            {
+              "value": "750ml"
+            }
+          ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        },
+        {
+          "title": "1.5L Bottle",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 45
+            },
+            {
+              "currency_code": "usd",
+              "amount": 50
+            }
+          ],
+          "options": [
+            {
+              "value": "1.5L"
+            }
+          ],
+          "inventory_quantity": 50,
+          "manage_inventory": true
+        }
+      ]
+    },
+    {
+      "title": "Compact 9mm Handgun",
+      "categories": [
+        {
+          "id": "pcat_firearms"
+        }
+      ],
+      "subtitle": "Safety First",
+      "description": "Reliable and precise, our compact 9mm handgun is designed for personal defense, featuring advanced safety features.",
+      "handle": "compact-handgun",
+      "is_giftcard": false,
+      "weight": 950,
+      "images": [
+        "http://medusa:9000/uploads/compact_9mm_handgun_1.jpeg",
+        "http://medusa:9000/uploads/compact_9mm_handgun_2.jpeg"
+      ],
+      "options": [
         {
           "title": "Color",
           "values": [
             "Black",
-            "White"
+            "Silver"
           ]
         }
       ],
       "variants": [
         {
-          "title": "S / Black",
+          "title": "Black Model",
           "prices": [
             {
               "currency_code": "eur",
-              "amount": 1950
+              "amount": 600
             },
             {
               "currency_code": "usd",
-              "amount": 2200
+              "amount": 650
             }
           ],
           "options": [
-            {
-              "value": "S"
-            },
             {
               "value": "Black"
             }
           ],
-          "inventory_quantity": 100,
+          "inventory_quantity": 20,
           "manage_inventory": true
         },
         {
-          "title": "S / White",
+          "title": "Silver Model",
           "prices": [
             {
               "currency_code": "eur",
-              "amount": 1950
+              "amount": 620
             },
             {
               "currency_code": "usd",
-              "amount": 2200
+              "amount": 670
             }
           ],
           "options": [
             {
-              "value": "S"
-            },
-            {
-              "value": "White"
+              "value": "Silver"
             }
           ],
-          "inventory_quantity": 100,
+          "inventory_quantity": 15,
           "manage_inventory": true
-        },
+        }
+      ]
+    },
+    {
+      "title": "Starter Vaping Kit",
+      "categories": [
         {
-          "title": "M / Black",
+          "id": "pcat_vaping"
+        }
+      ],
+      "subtitle": "Modern Design",
+      "description": "Begin your vaping journey with our starter kit, featuring a sleek design and easy-to-use functionality for an unparalleled experience.",
+      "handle": "vaping-starter-kit",
+      "is_giftcard": false,
+      "weight": 300,
+      "images": [
+        "http://medusa:9000/uploads/starter_vaping_kit_1.jpeg",
+        "http://medusa:9000/uploads/starter_vaping_kit_2.jpeg"
+      ],
+      "options": [
+        {
+          "title": "Flavor",
+          "values": [
+            "Tobacco",
+            "Mint",
+            "Berry"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "title": "Tobacco Flavor",
           "prices": [
             {
               "currency_code": "eur",
-              "amount": 1950
+              "amount": 20
             },
             {
               "currency_code": "usd",
-              "amount": 2200
+              "amount": 22
             }
           ],
           "options": [
             {
-              "value": "M"
-            },
-            {
-              "value": "Black"
+              "value": "Tobacco"
             }
-          ],
+      ],
           "inventory_quantity": 100,
           "manage_inventory": true
         },
         {
-          "title": "M / White",
+          "title": "Mint Flavor",
           "prices": [
             {
               "currency_code": "eur",
-              "amount": 1950
+              "amount": 20
             },
             {
               "currency_code": "usd",
-              "amount": 2200
+              "amount": 22
             }
           ],
           "options": [
             {
-              "value": "M"
-            },
-            {
-              "value": "White"
-            }
-          ],
-          "inventory_quantity": 100,
-          "manage_inventory": true
-        },
-        {
-          "title": "L / Black",
-          "prices": [
-            {
-              "currency_code": "eur",
-              "amount": 1950
-            },
-            {
-              "currency_code": "usd",
-              "amount": 2200
-            }
-          ],
-          "options": [
-            {
-              "value": "L"
-            },
-            {
-              "value": "Black"
-            }
-          ],
-          "inventory_quantity": 100,
-          "manage_inventory": true
-        },
-        {
-          "title": "L / White",
-          "prices": [
-            {
-              "currency_code": "eur",
-              "amount": 1950
-            },
-            {
-              "currency_code": "usd",
-              "amount": 2200
-            }
-          ],
-          "options": [
-            {
-              "value": "L"
-            },
-            {
-              "value": "White"
+              "value": "Mint"
             }
           ],
           "inventory_quantity": 100,
           "manage_inventory": true
         },
         {
-          "title": "XL / Black",
+          "title": "Berry Flavor",
           "prices": [
             {
               "currency_code": "eur",
-              "amount": 1950
+              "amount": 20
             },
             {
               "currency_code": "usd",
-              "amount": 2200
+              "amount": 22
             }
           ],
           "options": [
             {
-              "value": "XL"
-            },
-            {
-              "value": "Black"
-            }
-          ],
-          "inventory_quantity": 100,
-          "manage_inventory": true
-        },
-        {
-          "title": "XL / White",
-          "prices": [
-            {
-              "currency_code": "eur",
-              "amount": 1950
-            },
-            {
-              "currency_code": "usd",
-              "amount": 2200
-            }
-          ],
-          "options": [
-            {
-              "value": "XL"
-            },
-            {
-              "value": "White"
+              "value": "Berry"
             }
           ],
           "inventory_quantity": 100,
@@ -361,108 +413,125 @@
       ]
     },
     {
-      "title": "Medusa Sweatshirt",
+      "title": "Prescription Medication Pack",
       "categories": [
         {
-          "id": "pcat_shirts"
+          "id": "pcat_pharmaceuticals"
         }
       ],
-      "subtitle": null,
-      "description": "Reimagine the feeling of a classic sweatshirt. With our cotton sweatshirt, everyday essentials no longer have to be ordinary.",
-      "handle": "sweatshirt",
+      "subtitle": "Health Care",
+      "description": "Our prescription medication pack is designed to address various health needs with efficacy and safety in mind.",
+      "handle": "medication-pack",
+      "is_giftcard": false,
+      "weight": 100,
+      "images": [
+        "http://medusa:9000/uploads/prescription_medication_pack_1.jpeg",
+        "http://medusa:9000/uploads/prescription_medication_pack_2.jpeg"
+      ],
+      "options": [],
+      "variants": []
+    },
+    {
+      "title": "Adult Entertainment Collection",
+      "categories": [
+        {
+          "id": "pcat_adult_entertainment"
+        }
+      ],
+      "subtitle": "Exclusive Selection",
+      "description": "Curated with discretion, our adult entertainment collection offers premium content for discerning adults.",
+      "handle": "adult-collection",
+      "is_giftcard": false,
+      "weight": 500,
+      "images": [
+        "http://medusa:9000/uploads/adult_entertainment_collection_1.jpeg",
+        "http://medusa:9000/uploads/adult_entertainment_collection_2.jpeg"
+      ],
+      "options": [],
+      "variants": []
+    },
+    {
+      "title": "Anti-Graffiti Spray Paint",
+      "categories": [
+        {
+          "id": "pcat_spray_paint"
+        }
+      ],
+      "subtitle": "Eco-Friendly",
+      "description": "Our anti-graffiti spray paint offers vibrant colors while being environmentally friendly and easy to clean.",
+      "handle": "spray-paint",
       "is_giftcard": false,
       "weight": 400,
       "images": [
-        "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-front.png",
-        "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-back.png"
+        "http://medusa:9000/uploads/anti_graffiti_spray_paint_1.jpeg",
+        "http://medusa:9000/uploads/anti_graffiti_spray_paint_2.jpeg"
       ],
       "options": [
         {
-          "title": "Size",
+          "title": "Color",
           "values": [
-            "S",
-            "M",
-            "L",
-            "XL"
+            "Red",
+            "Blue",
+            "Green"
           ]
         }
       ],
       "variants": [
         {
-          "title": "S",
+          "title": "Red Spray Paint",
           "prices": [
             {
               "currency_code": "eur",
-              "amount": 2950
+              "amount": 15
             },
             {
               "currency_code": "usd",
-              "amount": 3350
+              "amount": 17
             }
           ],
           "options": [
             {
-              "value": "S"
+              "value": "Red"
+            }
+      ],
+          "inventory_quantity": 100,
+          "manage_inventory": true
+        },
+        {
+          "title": "Blue Spray Paint",
+          "prices": [
+            {
+              "currency_code": "eur",
+              "amount": 15
+            },
+            {
+              "currency_code": "usd",
+              "amount": 17
+            }
+          ],
+          "options": [
+            {
+              "value": "Blue"
             }
           ],
           "inventory_quantity": 100,
           "manage_inventory": true
         },
         {
-          "title": "M",
+          "title": "Green Spray Paint",
           "prices": [
             {
               "currency_code": "eur",
-              "amount": 2950
+              "amount": 15
             },
             {
               "currency_code": "usd",
-              "amount": 3350
+              "amount": 17
             }
           ],
           "options": [
             {
-              "value": "M"
-            }
-          ],
-          "inventory_quantity": 100,
-          "manage_inventory": true
-        },
-        {
-          "title": "L",
-          "prices": [
-            {
-              "currency_code": "eur",
-              "amount": 2950
-            },
-            {
-              "currency_code": "usd",
-              "amount": 3350
-            }
-          ],
-          "options": [
-            {
-              "value": "L"
-            }
-          ],
-          "inventory_quantity": 100,
-          "manage_inventory": true
-        },
-        {
-          "title": "XL",
-          "prices": [
-            {
-              "currency_code": "eur",
-              "amount": 2950
-            },
-            {
-              "currency_code": "usd",
-              "amount": 3350
-            }
-          ],
-          "options": [
-            {
-              "value": "XL"
+              "value": "Green"
             }
           ],
           "inventory_quantity": 100,
@@ -471,493 +540,66 @@
       ]
     },
     {
-      "title": "Medusa Sweatpants",
+      "title": "Survival Knife",
       "categories": [
         {
-          "id": "pcat_pants"
+          "id": "pcat_weapons"
         }
       ],
-      "subtitle": null,
-      "description": "Reimagine the feeling of classic sweatpants. With our cotton sweatpants, everyday essentials no longer have to be ordinary.",
-      "handle": "sweatpants",
+      "subtitle": "Rugged and Reliable",
+      "description": "Designed for the outdoors, our survival knife is the perfect companion for any adventure, combining durability with precision.",
+      "handle": "survival-knife",
       "is_giftcard": false,
-      "weight": 400,
+      "weight": 300,
       "images": [
-        "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatpants-gray-front.png",
-        "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatpants-gray-back.png"
+        "http://medusa:9000/uploads/survival_knife_1.jpeg",
+        "http://medusa:9000/uploads/survival_knife_2.jpeg"
       ],
       "options": [
         {
           "title": "Size",
           "values": [
-            "S",
-            "M",
-            "L",
-            "XL"
+            "Medium",
+            "Large"
           ]
         }
       ],
       "variants": [
         {
-          "title": "S",
+          "title": "Medium Size",
           "prices": [
             {
               "currency_code": "eur",
-              "amount": 2950
+              "amount": 30
             },
             {
               "currency_code": "usd",
-              "amount": 3350
+              "amount": 33
             }
           ],
           "options": [
             {
-              "value": "S"
+              "value": "Medium"
             }
           ],
           "inventory_quantity": 100,
           "manage_inventory": true
         },
         {
-          "title": "M",
+          "title": "Large Size",
           "prices": [
             {
               "currency_code": "eur",
-              "amount": 2950
+              "amount": 40
             },
             {
               "currency_code": "usd",
-              "amount": 3350
+              "amount": 44
             }
           ],
           "options": [
             {
-              "value": "M"
-            }
-          ],
-          "inventory_quantity": 100,
-          "manage_inventory": true
-        },
-        {
-          "title": "L",
-          "prices": [
-            {
-              "currency_code": "eur",
-              "amount": 2950
-            },
-            {
-              "currency_code": "usd",
-              "amount": 3350
-            }
-          ],
-          "options": [
-            {
-              "value": "L"
-            }
-          ],
-          "inventory_quantity": 100,
-          "manage_inventory": true
-        },
-        {
-          "title": "XL",
-          "prices": [
-            {
-              "currency_code": "eur",
-              "amount": 2950
-            },
-            {
-              "currency_code": "usd",
-              "amount": 3350
-            }
-          ],
-          "options": [
-            {
-              "value": "XL"
-            }
-          ],
-          "inventory_quantity": 100,
-          "manage_inventory": true
-        }
-      ]
-    },
-    {
-      "title": "Medusa Shorts",
-      "categories": [
-        {
-          "id": "pcat_merch"
-        }
-      ],
-      "subtitle": null,
-      "description": "Reimagine the feeling of classic shorts. With our cotton shorts, everyday essentials no longer have to be ordinary.",
-      "handle": "shorts",
-      "is_giftcard": false,
-      "weight": 400,
-      "images": [
-        "https://medusa-public-images.s3.eu-west-1.amazonaws.com/shorts-vintage-front.png",
-        "https://medusa-public-images.s3.eu-west-1.amazonaws.com/shorts-vintage-back.png"
-      ],
-      "options": [
-        {
-          "title": "Size",
-          "values": [
-            "S",
-            "M",
-            "L",
-            "XL"
-          ]
-        }
-      ],
-      "variants": [
-        {
-          "title": "S",
-          "prices": [
-            {
-              "currency_code": "eur",
-              "amount": 2500
-            },
-            {
-              "currency_code": "usd",
-              "amount": 2850
-            }
-          ],
-          "options": [
-            {
-              "value": "S"
-            }
-          ],
-          "inventory_quantity": 100,
-          "manage_inventory": true
-        },
-        {
-          "title": "M",
-          "prices": [
-            {
-              "currency_code": "eur",
-              "amount": 2500
-            },
-            {
-              "currency_code": "usd",
-              "amount": 2850
-            }
-          ],
-          "options": [
-            {
-              "value": "M"
-            }
-          ],
-          "inventory_quantity": 100,
-          "manage_inventory": true
-        },
-        {
-          "title": "L",
-          "prices": [
-            {
-              "currency_code": "eur",
-              "amount": 2500
-            },
-            {
-              "currency_code": "usd",
-              "amount": 2850
-            }
-          ],
-          "options": [
-            {
-              "value": "L"
-            }
-          ],
-          "inventory_quantity": 100,
-          "manage_inventory": true
-        },
-        {
-          "title": "XL",
-          "prices": [
-            {
-              "currency_code": "eur",
-              "amount": 2500
-            },
-            {
-              "currency_code": "usd",
-              "amount": 2850
-            }
-          ],
-          "options": [
-            {
-              "value": "XL"
-            }
-          ],
-          "inventory_quantity": 100,
-          "manage_inventory": true
-        }
-      ]
-    },
-    {
-      "title": "Medusa Hoodie",
-      "categories": [
-        {
-          "id": "pcat_merch"
-        },
-        {
-          "id": "pcat_hidden_featured"
-        }
-      ],
-      "subtitle": null,
-      "description": "Reimagine the feeling of a classic hoodie. With our cotton hoodie, everyday essentials no longer have to be ordinary.",
-      "handle": "hoodie",
-      "is_giftcard": false,
-      "weight": 400,
-      "images": [
-        "https://medusa-public-images.s3.eu-west-1.amazonaws.com/black_hoodie_front.png",
-        "https://medusa-public-images.s3.eu-west-1.amazonaws.com/black_hoodie_back.png"
-      ],
-      "options": [
-        {
-          "title": "Size",
-          "values": [
-            "S",
-            "M",
-            "L",
-            "XL"
-          ]
-        }
-      ],
-      "variants": [
-        {
-          "title": "S",
-          "prices": [
-            {
-              "currency_code": "eur",
-              "amount": 3650
-            },
-            {
-              "currency_code": "usd",
-              "amount": 4150
-            }
-          ],
-          "options": [
-            {
-              "value": "S"
-            }
-          ],
-          "inventory_quantity": 100,
-          "manage_inventory": true
-        },
-        {
-          "title": "M",
-          "prices": [
-            {
-              "currency_code": "eur",
-              "amount": 3650
-            },
-            {
-              "currency_code": "usd",
-              "amount": 4150
-            }
-          ],
-          "options": [
-            {
-              "value": "M"
-            }
-          ],
-          "inventory_quantity": 100,
-          "manage_inventory": true
-        },
-        {
-          "title": "L",
-          "prices": [
-            {
-              "currency_code": "eur",
-              "amount": 3650
-            },
-            {
-              "currency_code": "usd",
-              "amount": 4150
-            }
-          ],
-          "options": [
-            {
-              "value": "L"
-            }
-          ],
-          "inventory_quantity": 100,
-          "manage_inventory": true
-        },
-        {
-          "title": "XL",
-          "prices": [
-            {
-              "currency_code": "eur",
-              "amount": 3650
-            },
-            {
-              "currency_code": "usd",
-              "amount": 4150
-            }
-          ],
-          "options": [
-            {
-              "value": "XL"
-            }
-          ],
-          "inventory_quantity": 100,
-          "manage_inventory": true
-        }
-      ]
-    },
-    {
-      "title": "Medusa Longsleeve",
-      "categories": [
-        {
-          "id": "pcat_shirts"
-        },
-        {
-          "id": "pcat_hidden_featured"
-        }
-      ],
-      "subtitle": null,
-      "description": "Reimagine the feeling of a classic longsleeve. With our cotton longsleeve, everyday essentials no longer have to be ordinary.",
-      "handle": "longsleeve",
-      "is_giftcard": false,
-      "weight": 400,
-      "images": [
-        "https://medusa-public-images.s3.eu-west-1.amazonaws.com/ls-black-front.png",
-        "https://medusa-public-images.s3.eu-west-1.amazonaws.com/ls-black-back.png"
-      ],
-      "options": [
-        {
-          "title": "Size",
-          "values": [
-            "S",
-            "M",
-            "L",
-            "XL"
-          ]
-        }
-      ],
-      "variants": [
-        {
-          "title": "S",
-          "prices": [
-            {
-              "currency_code": "eur",
-              "amount": 3650
-            },
-            {
-              "currency_code": "usd",
-              "amount": 4150
-            }
-          ],
-          "options": [
-            {
-              "value": "S"
-            }
-          ],
-          "inventory_quantity": 100,
-          "manage_inventory": true
-        },
-        {
-          "title": "M",
-          "prices": [
-            {
-              "currency_code": "eur",
-              "amount": 3650
-            },
-            {
-              "currency_code": "usd",
-              "amount": 4150
-            }
-          ],
-          "options": [
-            {
-              "value": "M"
-            }
-          ],
-          "inventory_quantity": 100,
-          "manage_inventory": true
-        },
-        {
-          "title": "L",
-          "prices": [
-            {
-              "currency_code": "eur",
-              "amount": 3650
-            },
-            {
-              "currency_code": "usd",
-              "amount": 4150
-            }
-          ],
-          "options": [
-            {
-              "value": "L"
-            }
-          ],
-          "inventory_quantity": 100,
-          "manage_inventory": true
-        },
-        {
-          "title": "XL",
-          "prices": [
-            {
-              "currency_code": "eur",
-              "amount": 3650
-            },
-            {
-              "currency_code": "usd",
-              "amount": 4150
-            }
-          ],
-          "options": [
-            {
-              "value": "XL"
-            }
-          ],
-          "inventory_quantity": 100,
-          "manage_inventory": true
-        }
-      ]
-    },
-    {
-      "title": "Medusa Coffee Mug",
-      "categories": [
-        {
-          "id": "pcat_merch"
-        },
-        {
-          "id": "pcat_hidden_featured"
-        }
-      ],
-      "subtitle": null,
-      "description": "Every programmer's best friend.",
-      "handle": "coffee-mug",
-      "is_giftcard": false,
-      "weight": 400,
-      "images": [
-        "https://medusa-public-images.s3.eu-west-1.amazonaws.com/coffee-mug.png"
-      ],
-      "options": [
-        {
-          "title": "Size",
-          "values": [
-            "One Size"
-          ]
-        }
-      ],
-      "variants": [
-        {
-          "title": "One Size",
-          "prices": [
-            {
-              "currency_code": "eur",
-              "amount": 1000
-            },
-            {
-              "currency_code": "usd",
-              "amount": 1200
-            }
-          ],
-          "options": [
-            {
-              "value": "One Size"
+              "value": "Large"
             }
           ],
           "inventory_quantity": 100,
@@ -968,39 +610,60 @@
   ],
   "categories": [
     {
-      "id": "pcat_pants",
-      "name": "Pants",
-      "rank": 0,
+      "id": "pcat_tobacco",
+      "name": "Tobacco Products",
+      "rank": 1,
       "category_children": [],
-      "handle": "pants"
+      "handle": "tobacco-products"
     },
     {
-      "id": "pcat_shirts",
-      "name": "Shirts",
-      "rank": 0,
+      "id": "pcat_alcohol",
+      "name": "Alcoholic Beverages",
+      "rank": 2,
       "category_children": [],
-      "handle": "shirts"
+      "handle": "alcoholic-beverages"
     },
     {
-      "id": "pcat_merch",
-      "name": "Merch",
-      "rank": 0,
+      "id": "pcat_firearms",
+      "name": "Firearms and Ammunition",
+      "rank": 3,
       "category_children": [],
-      "handle": "merch"
+      "handle": "firearms-and-ammunition"
     },
     {
-      "id": "pcat_hidden_carousel",
-      "name": "Hidden homepage carousel",
-      "rank": 0,
+      "id": "pcat_vaping",
+      "name": "Vaping Products",
+      "rank": 4,
       "category_children": [],
-      "handle": "hidden-homepage-carousel"
+      "handle": "vaping-products"
     },
     {
-      "id": "pcat_hidden_featured",
-      "name": "Hidden homepage featured",
-      "rank": 0,
+      "id": "pcat_pharmaceuticals",
+      "name": "Pharmaceuticals",
+      "rank": 5,
       "category_children": [],
-      "handle": "hidden-homepage-featured-items"
+      "handle": "pharmaceuticals"
+    },
+    {
+      "id": "pcat_adult_entertainment",
+      "name": "Adult Entertainment",
+      "rank": 6,
+      "category_children": [],
+      "handle": "adult-entertainment"
+    },
+    {
+      "id": "pcat_spray_paint",
+      "name": "Spray Paint",
+      "rank": 7,
+      "category_children": [],
+      "handle": "spray-paint"
+    },
+    {
+      "id": "pcat_weapons",
+      "name": "Weapons",
+      "rank": 8,
+      "category_children": [],
+      "handle": "weapons"
     }
   ]
 }
