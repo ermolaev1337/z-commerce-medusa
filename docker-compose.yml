@@ -1,0 +1,35 @@
+services:
+
+  db:
+    container_name: db
+    image: postgres
+    environment:
+      - POSTGRES_DB=root
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready", "-d", "db_prod" ]
+    networks:
+      - heimdall-network
+
+  medusa:
+    container_name: medusa
+    build:
+      dockerfile: Dockerfile
+#    volumes:
+#      - ./z-commerce-medusa/src:/app/src #dev
+    env_file: .env
+    ports:
+      - 9000:9000 # for build (admin panel is on localhost:9000/app)
+    depends_on:
+      db:
+        condition: service_healthy
+    command: bash -c "yarn seed && yarn start" # for build
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:9000/health" ]
+    networks:
+      - heimdall-network
+
+networks:
+  heimdall-network:
+    external: true
