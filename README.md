@@ -1,3 +1,18 @@
+# z-commerce backend
+
+The shop backend of [z-Commerce](https://github.com/ermolaev1337/z-commerce): catalogue,
+cart, orders and the admin panel. It is not meant to run on its own — use `start.sh` in
+the parent repository.
+
+A Medusa starter with a seeded demo catalogue of age-restricted goods. The database is
+seeded on the first run only; a marker in a named volume keeps restarts from re-seeding.
+
+The API is on [http://localhost:9000](http://localhost:9000), the admin panel on
+[/app](http://localhost:9000/app) with the login `admin@medusa-test.com` and the password
+`supersecret`. The upstream starter documentation follows.
+
+---
+
 <p align="center">
   <a href="https://www.medusajs.com">
   <picture>
