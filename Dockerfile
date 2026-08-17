@@ -1,8 +1,8 @@
-FROM node
+FROM node:20
 
-COPY package.json /app/package.json
+COPY package.json yarn.lock /app/
 WORKDIR /app
-RUN yarn
+RUN yarn --frozen-lockfile
 
 RUN yarn global add @medusajs/medusa-cli
 COPY ./ /app
