@@ -2,13 +2,15 @@ services:
 
   db:
     container_name: db
-    image: postgres
+    image: postgres:16
     environment:
       - POSTGRES_DB=root
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=root
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready", "-d", "db_prod" ]
+      test: [ "CMD-SHELL", "pg_isready", "-U", "root", "-d", "root" ]
+    volumes:
+      - medusa-db:/var/lib/postgresql/data
     networks:
       - heimdall-network
 
@@ -19,16 +21,25 @@ services:
 #    volumes:
 #      - ./z-commerce-medusa/src:/app/src #dev
     env_file: .env
+    volumes:
+      - medusa-state:/state
     ports:
       - 9000:9000 # for build (admin panel is on localhost:9000/app)
     depends_on:
       db:
         condition: service_healthy
-    command: bash -c "yarn seed && yarn start" # for build
+    # The database is seeded exactly once. On a second run "medusa seed" fails
+    # with "user already exists" and then hangs instead of exiting, which used
+    # to leave the server unreachable after every restart.
+    command: bash -c "if [ ! -f /state/seeded ]; then yarn seed && touch /state/seeded; fi; yarn start"
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:9000/health" ]
     networks:
       - heimdall-network
+
+volumes:
+  medusa-db:
+  medusa-state:
 
 networks:
   heimdall-network:
